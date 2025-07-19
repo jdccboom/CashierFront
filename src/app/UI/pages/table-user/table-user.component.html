@@ -1,0 +1,49 @@
+<div class="table-container">
+  <div class="table-header">
+    <h1>Lista de Usuarios</h1>
+  </div>
+
+  <div class="table-responsive">
+    <table class="user-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombres</th>
+          <th>Apellidos</th>
+          <th>Puntos Acumulados</th>
+          <th>Estado</th>
+          <th *ngIf="role === 'Admin'" class="actions-column">Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users$ | async" class="user-row">
+          <td class="user-id">{{ user.id }}</td>
+          <td class="user-name">{{ user.names }}</td>
+          <td class="user-lastname">{{ user.surnames }}</td>
+          <td class="user-points">
+            <span class="points-badge">{{ user.accumulatePoints }}</span>
+          </td>
+          <td class="user-status">
+            <span *ngIf="user.isActive">
+                Activo
+            </span>
+            <span *ngIf="!user.isActive">
+                Inactivo
+            </span>
+          </td>
+          <td *ngIf="role === 'Admin'" class="actions-column">
+            <div class="action-buttons">
+              <app-button type="edit" [user]="user"></app-button>
+              <app-button type="delete" [user]="user" (delete)="onDelete($event)"></app-button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Mensaje cuando no hay usuarios -->
+    <!-- <div *ngIf="users.length === 0" class="no-users">
+      <p>No hay usuarios registrados</p>
+    </div> -->
+  </div>
+</div>
