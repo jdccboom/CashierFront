@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { User } from '@models/User/user';
 
 @Component({
   selector: 'app-button',
@@ -10,4 +11,14 @@ import { Component, Input } from '@angular/core';
 })
 export class ButtonComponent {
   @Input() type!:String;
+  @Input() user!:User
+  @Output() delete = new EventEmitter<User>();
+  @Output() edit = new EventEmitter<User>();
+
+  onDelete(){
+    this.delete.emit(this.user);
+  }
+  onEdit(){
+    this.edit.emit(this.user);
+  }
 }
