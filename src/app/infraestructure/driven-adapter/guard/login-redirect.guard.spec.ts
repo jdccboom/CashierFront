@@ -29,7 +29,7 @@ describe('loginRedirectGuard (functional)', () => {
   const mockRoute = {} as ActivatedRouteSnapshot;
   const mockState = { url: '/login' } as RouterStateSnapshot;
 
-  it('✅ permite acceso si el usuario NO está autenticado', (done) => {
+  it('permite acceso si el usuario NO está autenticado', (done) => {
     const fakeUser = { isAuthenticated: false };
     mockGetCurrentUserUseCase.execute.and.returnValue(of(fakeUser));
 
@@ -48,7 +48,7 @@ describe('loginRedirectGuard (functional)', () => {
     }
   });
 
-  it('⛔ redirige si el usuario está autenticado', (done) => {
+  it('redirige si el usuario está autenticado', (done) => {
     const fakeUser = {
       isAuthenticated: true,
       getRedirectPath: () => '/dashboard'

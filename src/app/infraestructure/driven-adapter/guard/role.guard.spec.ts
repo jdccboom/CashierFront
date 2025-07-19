@@ -38,7 +38,7 @@ describe('roleGuard', () => {
     } as unknown as ActivatedRouteSnapshot;
   };
 
-  it('✅ permite acceso si el usuario está autenticado y cumple roles y permisos', (done) => {
+  it('permite acceso si el usuario está autenticado y cumple roles y permisos', (done) => {
     const user = {
       isAuthenticated: true,
       role: UserRole.ADMIN,
@@ -63,7 +63,7 @@ describe('roleGuard', () => {
     }
   });
 
-  it('⛔ redirige a login si el usuario no está autenticado', (done) => {
+  it('redirige a login si el usuario no está autenticado', (done) => {
     const user = { isAuthenticated: false };
     mockGetCurrentUserUseCase.execute.and.returnValue(of(user));
     const route = createMockRoute();
@@ -83,7 +83,7 @@ describe('roleGuard', () => {
     }
   });
 
-  it('⛔ redirige si el rol del usuario no está permitido', (done) => {
+  it('redirige si el rol del usuario no está permitido', (done) => {
     const user = {
       isAuthenticated: true,
       role: UserRole.CAJERO,
@@ -108,7 +108,7 @@ describe('roleGuard', () => {
     }
   });
 
-  it('⛔ redirige si el usuario no tiene los permisos requeridos', (done) => {
+  it('redirige si el usuario no tiene los permisos requeridos', (done) => {
     const user = {
       isAuthenticated: true,
       role: UserRole.ADMIN,
