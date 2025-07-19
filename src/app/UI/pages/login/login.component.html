@@ -1,0 +1,45 @@
+<div id="root">
+  <div class="form-control shadow-lg" id="container">
+    <h1>Login</h1>
+    <p class="text-black mb-3">Enter your username below to start account</p>
+    
+    <label for="email" class="form-label">Username</label>
+    <div>
+      <input
+        type="email"
+        id="email"
+        class="form-control mb-2"
+        placeholder="E-Mail"
+        aria-label="Username"
+        [(ngModel)]="Login.email"
+        #email="ngModel"
+        required
+      />
+      <div class="invalid-feedback">
+        This field is required
+      </div>
+    </div>
+    
+    <label for="password" class="form-label">Password</label>
+    <div>
+      <input
+        type="password"
+        id="password"
+        class="form-control mb-2"
+        placeholder="ej:123456789"
+        aria-label="Password"
+        name="password"
+        [(ngModel)]="Login.password"
+        #password="ngModel"
+        required
+      />
+      <div class="invalid-feedback">
+        This field is required
+      </div>
+    </div>
+  
+    <div id="container-buttons">
+      <button class="btn btn-primary w-100" (click)="login()">Login</button>
+    </div>
+  </div>
+</div>

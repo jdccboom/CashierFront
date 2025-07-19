@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable, of, take } from 'rxjs';
-import { User } from '../../../domain/models/users/user';
+import { User } from '../../../domain/models/User/user';
 import { CommonModule } from '@angular/common';
 import { ButtonComponent } from '../../ds/buttons/button/button.component';
+import { UserGateway } from '@models/User/gateway/user.gateway';
 
 @Component({
   selector: 'app-table-user',
@@ -17,23 +18,16 @@ export class TableUserComponent implements OnInit{
 
   role: String = "Admin"
 
-  constructor(){
+  constructor(private userGateway: UserGateway){
   }
 
   ngOnInit(): void {
-    const mockUsers: User[] = [
-      { id: 1, names: 'Juan', surnames: 'Pérez', accumulatePoints: 120, isActive: true, role:"cajero" },
-      { id: 2, names: 'Ana', surnames: 'García', accumulatePoints: 95, isActive: false, role:"cajero" },
-      { id: 3, names: 'Carlos', surnames: 'Ramírez', accumulatePoints: 200, isActive: true, role:"cajero" }
-    ];
-    this.users$ = of(mockUsers);
+    this.users$ = this.userGateway.getAllUsers();
   }
 
   onDelete(userDelete: User){
-    let userFound:any;
-    this.users$.pipe(take(1)).subscribe(userFind=>{
-      userFound = userFind.find(u => u.id === userDelete.id)
-    })
+    this.userGateway.deleteUser(userDelete.id);
+    this.users$ = this.userGateway.getAllUsers();
   }
 
 

@@ -1,7 +1,6 @@
 <div class="table-container">
   <div class="table-header">
-    <h3>Lista de Usuarios</h3>
-    <!-- <span class="user-count">Total: {{ user.length }} usuarios</span> -->
+    <h1>Lista de Usuarios</h1>
   </div>
 
   <div class="table-responsive">
@@ -34,8 +33,8 @@
           </td>
           <td *ngIf="role === 'Admin'" class="actions-column">
             <div class="action-buttons">
-              <app-button type="edit"></app-button>
-              <app-button type="delete"></app-button>
+              <app-button type="edit" [user]="user"></app-button>
+              <app-button type="delete" [user]="user" (delete)="onDelete($event)"></app-button>
             </div>
           </td>
         </tr>

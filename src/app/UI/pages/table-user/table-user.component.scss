@@ -8,17 +8,17 @@
 
 .table-header {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: 5px;
   background: #f8f9fa;
   border-bottom: 1px solid #dee2e6;
 }
 
-.table-header h3 {
+.table-header h1 {
   margin: 0;
   color: #333;
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 
 .user-count {
