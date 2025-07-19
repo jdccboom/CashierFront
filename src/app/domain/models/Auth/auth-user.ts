@@ -40,5 +40,6 @@ export enum Permission {
   VIEW_USERS = 'view_users',
   CREATE_USERS = 'create_users',
   EDIT_USERS = 'edit_users',
-  DELETE_USERS = 'delete_users'
+  DELETE_USERS = 'delete_users',
+  MANAGE_USERS = "MANAGE_USERS"
 }
