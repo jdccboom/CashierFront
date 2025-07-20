@@ -46,8 +46,6 @@ export class ModalComponent {
     this.onClose();
   }
 
-  resetForm() {
-    
-  }
+  resetForm() {}
 
 }
