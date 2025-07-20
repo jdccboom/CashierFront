@@ -1,0 +1,35 @@
+<div class="modal-backdrop" *ngIf="show" (click)="onClose()"></div>
+<div class="modal fade show d-block" tabindex="-1" *ngIf="show" style="background: transparent;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">{{ title }}</h5>
+        <button type="button" class="btn-close" (click)="onClose()"></button>
+      </div>
+      <form (ngSubmit)="agregarUsuario()" #formUsuario="ngForm">
+        <div class="modal-body">
+          <div class="mb-3">
+            <label class="form-label">ID</label>
+            <input type="number" class="form-control" [(ngModel)]="usuario.id" name="id" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Nombres</label>
+            <input type="text" class="form-control" [(ngModel)]="usuario.nombres" name="nombres" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Apellidos</label>
+            <input type="text" class="form-control" [(ngModel)]="usuario.apellidos" name="apellidos" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Puntos Acumulados</label>
+            <input type="number" class="form-control" [(ngModel)]="usuario.puntosAcumulados" name="puntosAcumulados" required>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" (click)="onClose()">Cancelar</button>
+          <button type="submit" class="btn btn-primary" [disabled]="formUsuario.invalid">Agregar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

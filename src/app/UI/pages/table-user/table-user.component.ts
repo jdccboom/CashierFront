@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Observable, of, take } from 'rxjs';
 import { User } from '../../../domain/models/User/user';
 import { CommonModule } from '@angular/common';
@@ -16,7 +16,7 @@ export class TableUserComponent implements OnInit{
 
   users$!: Observable<User[]>
 
-  role: String = "Admin"
+  @Input() role!: String;
 
   constructor(private userGateway: UserGateway){
   }
