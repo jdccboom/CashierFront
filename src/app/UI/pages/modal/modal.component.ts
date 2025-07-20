@@ -47,7 +47,7 @@ export class ModalComponent {
   }
 
   resetForm() {
-    
+    this.user = new User(0, "Nombre", "Apellido", 0, false);
   }
 
 }

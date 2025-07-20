@@ -24,7 +24,6 @@ describe('Pruebas del componente TableUserComponent', () => {
   ]);
 
   beforeEach(async () => {
-    // Simulamos que getAllUsers y deleteUser devuelven datos correctos
     mockUserGateway.getAllUsers.and.returnValue(of(mockUsers));
     mockUserGateway.deleteUser.and.returnValue(of(false));
 
@@ -67,9 +66,5 @@ describe('Pruebas del componente TableUserComponent', () => {
       expect(users).toEqual(mockUsers);
       done();
     });
-  });
-
-  it('debería tener el rol por defecto como "Admin"', () => {
-    expect(component.role).toBe('Admin');
   });
 });

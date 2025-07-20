@@ -43,7 +43,7 @@ describe('Pruebas del componente LoginComponent', () => {
 
   it('debería ejecutar loginUseCase con el email y password correctos', () => {
     // Datos simulados para login
-    component.Login.email = 'test@example.com';
+    component.Login.username = 'test@example.com';
     component.Login.password = '123456';
 
     // Resultado simulado

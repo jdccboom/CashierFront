@@ -15,7 +15,7 @@ import { Observable, take } from 'rxjs';
 export class LoginComponent {
 
   Login = {
-    email: "",
+    username: "",
     password: ""
   }
 
@@ -27,9 +27,10 @@ export class LoginComponent {
 
   login() {
     console.log("Loggeando")
-    this.auth = this.loginUseCase.execute(this.Login.email, this.Login.password);
+    this.auth = this.loginUseCase.execute(this.Login.username, this.Login.password);
     this.auth.pipe(take(1)).subscribe(a=>{
       console.log(a.user);
+      this.routes.navigate(["/dashboard"]);
     })
   }
 }
