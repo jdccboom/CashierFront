@@ -12,7 +12,7 @@
           <th>Apellidos</th>
           <th>Puntos Acumulados</th>
           <th>Estado</th>
-          <th *ngIf="role === 'Admin'" class="actions-column">Acciones</th>
+          <th *ngIf="role === 'admin'" class="actions-column">Acciones</th>
         </tr>
       </thead>
       <tbody>
@@ -31,7 +31,7 @@
                 Inactivo
             </span>
           </td>
-          <td *ngIf="role === 'Admin'" class="actions-column">
+          <td *ngIf="role === 'admin'" class="actions-column">
             <div class="action-buttons">
               <app-button type="edit" [user]="user"></app-button>
               <app-button type="delete" [user]="user" (delete)="onDelete($event)"></app-button>
@@ -40,10 +40,5 @@
         </tr>
       </tbody>
     </table>
-
-    <!-- Mensaje cuando no hay usuarios -->
-    <!-- <div *ngIf="users.length === 0" class="no-users">
-      <p>No hay usuarios registrados</p>
-    </div> -->
   </div>
 </div>

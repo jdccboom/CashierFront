@@ -2,7 +2,7 @@
   background: white;
   border-radius: 8px;
   box-shadow: 0 20px 20px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
+  overflow-x: hidden;
   margin: 20px 0;
 }
 
@@ -24,7 +24,9 @@
 .user-count {
   background: #007bff;
   color: white;
-  padding: 5px 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 20px;
   font-size: 0.9rem;
   font-weight: 500;
@@ -50,7 +52,6 @@
   font-size: 0.85rem;
   letter-spacing: 0.5px;
 }
-
 .user-table tbody tr {
   border-bottom: 1px solid #dee2e6;
   transition: background-color 0.2s ease;
@@ -74,6 +75,12 @@
 .user-name, .user-lastname {
   font-weight: 500;
   color: #333;
+}
+
+.user-points{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .points-badge {
