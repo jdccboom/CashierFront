@@ -1,4 +1,3 @@
-// src/app/infrastructure/drivers-adapters/user-mock.adapter.ts
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, of, delay, throwError } from 'rxjs';
 import { UserGateway } from '@models/User/gateway/user.gateway';

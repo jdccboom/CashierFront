@@ -1,4 +1,3 @@
-// src/app/infrastructure/drivers-adapters/auth-mock.adapter.ts
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, of, delay } from 'rxjs';
 import { AuthGateway, AuthResult } from '@models/Auth/gatewey/auth.gateway';
