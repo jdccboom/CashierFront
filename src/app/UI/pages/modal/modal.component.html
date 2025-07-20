@@ -3,31 +3,32 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">{{ title }}</h5>
+        <h1 class="modal-title">{{ title }}</h1>
         <button type="button" class="btn-close" (click)="onClose()"></button>
       </div>
       <form (ngSubmit)="agregarUsuario()" #formUsuario="ngForm">
         <div class="modal-body">
           <div class="mb-3">
             <label class="form-label">ID</label>
-            <input type="number" class="form-control" [(ngModel)]="usuario.id" name="id" required>
+            <input type="number" class="form-control" [(ngModel)]="user.id" name="id" required>
           </div>
           <div class="mb-3">
             <label class="form-label">Nombres</label>
-            <input type="text" class="form-control" [(ngModel)]="usuario.nombres" name="nombres" required>
+            <input type="text" class="form-control" [(ngModel)]="user.names" name="nombres" required>
           </div>
           <div class="mb-3">
             <label class="form-label">Apellidos</label>
-            <input type="text" class="form-control" [(ngModel)]="usuario.apellidos" name="apellidos" required>
+            <input type="text" class="form-control" [(ngModel)]="user.surnames" name="apellidos" required>
           </div>
           <div class="mb-3">
             <label class="form-label">Puntos Acumulados</label>
-            <input type="number" class="form-control" [(ngModel)]="usuario.puntosAcumulados" name="puntosAcumulados" required>
+            <input type="number" class="form-control" [(ngModel)]="user.accumulatePoints" name="puntosAcumulados" required>
           </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" (click)="onClose()">Cancelar</button>
-          <button type="submit" class="btn btn-primary" [disabled]="formUsuario.invalid">Agregar</button>
+          <button *ngIf="edit" class="btn btn-primary" (click)="editUser()" [disabled]="formUsuario.invalid">Editar</button>
+          <button *ngIf="!edit" class="btn btn-primary" (click)="agregarUsuario()"[disabled]="formUsuario.invalid">Agregar</button>
         </div>
       </form>
     </div>

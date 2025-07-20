@@ -14,11 +14,15 @@ export class ButtonComponent {
   @Input() user!:User
   @Output() delete = new EventEmitter<User>();
   @Output() edit = new EventEmitter<User>();
+  @Output() add =  new EventEmitter<boolean>();
 
   onDelete(){
     this.delete.emit(this.user);
   }
   onEdit(){
     this.edit.emit(this.user);
+  }
+  onAdd(){
+    this.add.emit(true);
   }
 }
