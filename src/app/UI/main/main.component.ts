@@ -7,7 +7,7 @@ import { ModalComponent } from "../pages/modal/modal.component";
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [/* RouterOutlet, */ ModalComponent],
+  imports: [ RouterOutlet],
   templateUrl: './main.component.html',
   styleUrl: './main.component.scss'
 })
