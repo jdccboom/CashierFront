@@ -33,12 +33,18 @@
           </td>
           <td *ngIf="role === 'admin'" class="actions-column">
             <div class="action-buttons">
-              <app-button type="edit" [user]="user"></app-button>
+              <app-button type="edit" [user]="user" (edit)="onEdit($event)"></app-button>
               <app-button type="delete" [user]="user" (delete)="onDelete($event)"></app-button>
             </div>
           </td>
         </tr>
       </tbody>
     </table>
+  </div>
+  <div *ngIf="role === 'admin'">
+    <app-button type="add" (add)="onAdd($event)" ></app-button>
+  </div>
+  <div *ngIf="show">
+    <app-modal title="Modificar Usuario" [show]="show" [edit]="isEdit" [userModificate]="user" (close)="onCloseModal()"></app-modal>
   </div>
 </div>
