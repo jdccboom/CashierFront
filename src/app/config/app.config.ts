@@ -7,9 +7,11 @@ import { UserGateway } from '@models/User/gateway/user.gateway';
 import { UserMockService } from '@driven-adapter/user/user-mock.service';
 import { AuthGateway } from '@models/Auth/gatewey/auth.gateway';
 import { AuthMockService } from '@driven-adapter/auth/auth-mock.service';
+import { LocationStrategy, PathLocationStrategy } from '@angular/common';
 
 export const appConfig: ApplicationConfig = {
   providers: [provideRouter(routes), provideHttpClient(withFetch()),
   { provide: UserGateway, useClass: UserMockService },
-  { provide: AuthGateway, useClass: AuthMockService }]
+  { provide: AuthGateway, useClass: AuthMockService },
+	{ provide: LocationStrategy, useClass: PathLocationStrategy}]
 };

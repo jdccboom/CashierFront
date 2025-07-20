@@ -31,6 +31,5 @@ export class LoginComponent {
     this.auth.pipe(take(1)).subscribe(a=>{
       console.log(a.user);
     })
-
   }
 }

@@ -8,6 +8,7 @@ export const roleGuard: CanActivateFn = (route: ActivatedRouteSnapshot) => {
   const getCurrentUserUseCase = inject(GetCurrentUserUseCase);
   const router = inject(Router);
 
+  
   const allowedRoles = route.data['roles'] as UserRole[];
   const requiredPermissions = route.data['permissions'] as Permission[];
 
@@ -19,13 +20,11 @@ export const roleGuard: CanActivateFn = (route: ActivatedRouteSnapshot) => {
         return false;
       }
 
-      // Verificar roles permitidos
       if (allowedRoles && !allowedRoles.includes(user.role)) {
         redirectByRole(router, user.role);
         return false;
       }
 
-      // Verificar permisos requeridos
       if (requiredPermissions && !hasRequiredPermissions(user, requiredPermissions)) {
         redirectByRole(router, user.role);
         return false;
