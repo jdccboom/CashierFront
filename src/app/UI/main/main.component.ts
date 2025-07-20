@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
-/* import { AlbumComponent } from '../pages/album/album.component';*/
-import { TableUserComponent } from '../pages/table-user/table-user.component';
 import { RouterOutlet } from '@angular/router';
-import { LoginComponent } from "../pages/login/login.component";
+import { CajeroComponent } from "../pages/cajero/cajero.component";
+import { DashboardComponent } from "../pages/dashboard/dashboard.component";
+import { ModalComponent } from "../pages/modal/modal.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet/*,  TableUserComponent */ /*, AlbumComponent */, LoginComponent],
+  imports: [/* RouterOutlet, */ ModalComponent],
   templateUrl: './main.component.html',
   styleUrl: './main.component.scss'
 })

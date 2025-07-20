@@ -7,7 +7,12 @@ export class MockDataHelper {
     new User(2, 'María Elena', 'Rodríguez López', 850, true),
     new User(3, 'Carlos Alberto', 'Martínez Silva', 2100, false),
     new User(4, 'Ana Sofía', 'González Vargas', 675, true),
-    new User(5, 'Luis Fernando', 'Hernández Castro', 1800, true)
+    new User(5, 'Luis Fernando', 'Hernández Castro', 1800, true),
+    new User(6, 'Juan Carlos', 'Pérez García', 1250, true),
+    new User(7, 'María Elena', 'Rodríguez López', 850, true),
+    new User(8, 'Carlos Alberto', 'Martínez Silva', 2100, false),
+    new User(9, 'Ana Sofía', 'González Vargas', 675, true),
+    new User(10, 'Luis Fernando', 'Hernández Castro', 1800, true)
   ];
 
   static readonly MOCK_CREDENTIALS = [
